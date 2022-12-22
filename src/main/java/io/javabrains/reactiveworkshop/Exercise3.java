@@ -1,6 +1,8 @@
 package io.javabrains.reactiveworkshop;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Exercise3 {
 
@@ -10,11 +12,14 @@ public class Exercise3 {
 
         // Get all numbers in the ReactiveSources.intNumbersFlux stream
         // into a List and print the list and its size
-        // TODO: Write code here
-
+        List<Integer> numbers = new ArrayList<>();
+        ReactiveSources.intNumbersFlux().subscribe(n -> numbers.add(n));
 
         System.out.println("Press a key to end");
         System.in.read();
+
+        System.out.println(numbers);
+        System.out.println(numbers.size());
     }
 
 }
